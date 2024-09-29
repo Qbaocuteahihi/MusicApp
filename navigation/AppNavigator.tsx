@@ -1,13 +1,17 @@
-// src/App.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './components/Login';
-import Home from './components/Home';
+import Login from '../components/Login';
+import Home from '../components/Home';
 
-const Stack = createStackNavigator();
+ type RootStackParamList = {
+  Login: undefined;
+  Home: undefined;
+};
 
-const App: React.FC = () => {
+const Stack = createStackNavigator<RootStackParamList>();
+
+const AppNavigator: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
@@ -18,4 +22,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default AppNavigator;
