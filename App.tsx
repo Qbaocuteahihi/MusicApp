@@ -1,19 +1,12 @@
-// src/App.tsx
+// App.tsx
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import Login from './components/Login';
-import Home from './components/Home';
+import AppNavigator from './navigation/AppNavigator'; // Update the path to the correct location
 
-const Stack = createStackNavigator();
-
-const App: React.FC = () => {
+const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
+      <AppNavigator />
     </NavigationContainer>
   );
 };

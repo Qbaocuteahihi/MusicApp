@@ -1,3 +1,11 @@
+
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "include": [
+    "src/**/*", // Replace src with your main directory if needed
+    "types.ts"  // If types.ts is at the root directory level
+  ],
+  "exclude": [
+    "node_modules/@react-native/typescript-config/**/Pods/**"
+  ]
 }
